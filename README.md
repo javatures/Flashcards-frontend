@@ -1,4 +1,4 @@
-#Project 1: Flashcards
+# Project 1: Flashcards
 Flashcard study application
 
 # Getting Started with Create React App
