@@ -50,7 +50,7 @@ class ListFlashcardComponent extends Component {
     }
 
     updateFlashcardClicked(id) {
-        console.log('update flashcard clicked...qa id: ' + id)
+        console.log('update flashcard clicked...flashcard id: ' + id)
         this.props.history.push(`/${id}`)
     }
 

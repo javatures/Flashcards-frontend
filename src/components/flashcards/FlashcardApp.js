@@ -51,7 +51,7 @@ class FlashcardApp extends Component {
                 }
             })
             this.setState({
-                Flashcards: userSelectedCategoriesList
+                selectedCategoriesList: userSelectedCategoriesList
             })
         } else {
             this.refreshFlashcards()
@@ -73,7 +73,8 @@ class FlashcardApp extends Component {
                 response => {
                     console.log(`FlashcardApp.refreshFlashcards response=${response.data}`)
                     this.setState({
-                        Flashcards: response.data
+                        Flashcards: response.data,
+                        selectedCategoriesList: response.data
                     })
                 }
             )
@@ -84,8 +85,7 @@ class FlashcardApp extends Component {
     render() {
         console.log(this.state.Flashcards)
         return (
-            <div className="container">
-                <FlashcardList flashcards={this.state.Flashcards} />
+            <div className="form-group">
                 <div className="header" onSubmit={this.handleSubmit}>
                     <form>
                         <div className="form-group">
@@ -100,7 +100,7 @@ class FlashcardApp extends Component {
                                 }
                             </select>
                         </div>
-                        <FlashcardList flashcards={this.state.Flashcards}  />
+                        <FlashcardList flashcards={this.state.selectedCategoriesList}  />
                     </form>
                 </div>
             </div>
