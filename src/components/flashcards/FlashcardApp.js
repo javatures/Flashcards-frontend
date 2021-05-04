@@ -23,6 +23,20 @@ class FlashcardApp extends Component {
         console.log(this.state)
     }
 
+    refreshFlashcards() {
+        let username = AuthenticationService.getLoggedInUser()
+        FlashcardDataService.retrieveAllFlashcards(username)
+            .then(
+                response => {
+                    console.log(`FlashcardApp.refreshFlashcards response=${response.data}`)
+                    this.setState({
+                        Flashcards: response.data,
+                        selectdListOfCategories: response.data
+                    })
+                }
+            )
+    }
+
     handleSubmit(e) {
         console.log(e.target.value)
         const selectedValue = e.target.value;
@@ -42,23 +56,6 @@ class FlashcardApp extends Component {
             this.refreshFlashcards()
         }
         e.preventDefault()
-    }
-
-
-
-
-    refreshFlashcards() {
-        let username = AuthenticationService.getLoggedInUser()
-        FlashcardDataService.retrieveAllFlashcards(username)
-            .then(
-                response => {
-                    console.log(`FlashcardApp.refreshFlashcards response=${response.data}`)
-                    this.setState({
-                        Flashcards: response.data,
-                        selectdListOfCategories: response.data
-                    })
-                }
-            )
     }
 
 

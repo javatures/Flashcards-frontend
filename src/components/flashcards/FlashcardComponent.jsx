@@ -88,10 +88,10 @@ class FlashcardComponent extends Component {
         
         if (parseInt(f.Fid) === -1) {
             FlashcardDataService.createFlashcard(username, f)
-                .then(() => this.props.history.push('/'))
+                .then(() => this.props.history.push('/flashcards'))
         } else {
             FlashcardDataService.updateFlashcard(username, this.state.Fid, f)
-                .then(() => this.props.history.push('/'))
+                .then(() => this.props.history.push('/flashcards'))
         }
         
         console.log("done w/ onSubmit " + values)

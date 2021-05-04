@@ -51,12 +51,12 @@ class ListFlashcardComponent extends Component {
 
     updateFlashcardClicked(id) {
         console.log('update flashcard clicked...flashcard id: ' + id)
-        this.props.history.push(`/${id}`)
+        this.props.history.push(`/flashcards/${id}`)
     }
 
     addFlashcardClicked() {
         console.log("ListFlashcardComponent.addFlashcardClicked")
-        this.props.history.push(`/-1`)
+        this.props.history.push(`/flashcards/-1`)
     }
 
     render() {
