@@ -12,12 +12,18 @@ class FlashcardApp extends Component {
             Flashcards: [],
             message: '',
             category: '',
-            selectedCategoriesList: []
+            selectdListOfCategories: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-      handleSubmit(e) {
+    componentDidMount() {
+        console.log('FlashcardApp.componentDidMount')
+        this.refreshFlashcards()
+        console.log(this.state)
+    }
+
+    handleSubmit(e) {
         console.log(e.target.value)
         const selectedValue = e.target.value;
         let userSelectedListOfCategories = []
@@ -30,28 +36,7 @@ class FlashcardApp extends Component {
                 }
             })
             this.setState({
-                Flashcards: userSelectedListOfCategories
-            })
-        } else {
-            this.refreshFlashcards()
-        }
-        e.preventDefault()
-    }
-
-    handleSubmit(e) {
-        console.log(e.target.value)
-        const selectedValue = e.target.value;
-        let userSelectedCategoriesList = []
-
-        if (selectedValue !== 'All') {
-            console.log("doesn't === All")
-            this.state.Flashcards.forEach((f) => {
-                if(f.category === selectedValue) {
-                    userSelectedCategoriesList.push(f)
-                }
-            })
-            this.setState({
-                selectedCategoriesList: userSelectedCategoriesList
+                selectedListOfCategories: userSelectedListOfCategories
             })
         } else {
             this.refreshFlashcards()
@@ -60,11 +45,7 @@ class FlashcardApp extends Component {
     }
 
 
-    componentDidMount() {
-        console.log('FlashcardApp.componentDidMount')
-        this.refreshFlashcards()
-        console.log(this.state)
-    }
+
 
     refreshFlashcards() {
         let username = AuthenticationService.getLoggedInUser()
@@ -74,7 +55,7 @@ class FlashcardApp extends Component {
                     console.log(`FlashcardApp.refreshFlashcards response=${response.data}`)
                     this.setState({
                         Flashcards: response.data,
-                        selectedCategoriesList: response.data
+                        selectdListOfCategories: response.data
                     })
                 }
             )
@@ -100,7 +81,7 @@ class FlashcardApp extends Component {
                                 }
                             </select>
                         </div>
-                        <FlashcardList flashcards={this.state.selectedCategoriesList}  />
+                        <FlashcardList flashcards={this.state.selectedListOfCategories}  />
                     </form>
                 </div>
             </div>

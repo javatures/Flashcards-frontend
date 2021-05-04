@@ -1,13 +1,11 @@
 import axios from 'axios'
 import { API_URL } from '../../APIRouterConstants'
 
-//let backend_url = 'http://54.158.33.232:3001';
-
 class AuthenticationService {
 
     executeBasicAuthenticationService(username, password) {
         console.log("AuthenticationService.executeBasicAuthenticationService:" + username + ":" + password)
-        return axios.post(`${API_URL}/users/login/api/user`, //`/flashcards/users/login/api/user`, 
+        return axios.post(`${API_URL}/users/login/api/user`, 
             {
                 user_email: username,
                 user_login: username,
