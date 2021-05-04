@@ -88,10 +88,10 @@ class FlashcardComponent extends Component {
         
         if (parseInt(f.Fid) === -1) {
             FlashcardDataService.createFlashcard(username, f)
-                .then(() => this.props.history.push('/flashcards'))
+                .then(() => this.props.history.push('/'))
         } else {
             FlashcardDataService.updateFlashcard(username, this.state.Fid, f)
-                .then(() => this.props.history.push('/flashcards'))
+                .then(() => this.props.history.push('/'))
         }
         
         console.log("done w/ onSubmit " + values)
@@ -105,7 +105,7 @@ class FlashcardComponent extends Component {
 
         return (
             <div className="container">
-                <h1>Flash Card</h1>
+                <h1>Flashcard</h1>
                 <div className="container">
                    <Formik 
                         initialValues={{Fid, user_email, category, question, answer}}
@@ -135,7 +135,7 @@ class FlashcardComponent extends Component {
                                 </fieldset>
                                 <button className="btn btn-success" type="submit">Save</button>
                                 <span style={{width:100}}> </span>
-                                <Link className="btn btn-success" to="/flashcards">Cancel</Link>
+                                <Link className="btn btn-success" to="/">Cancel</Link>
                             </Form>
                         )
                     }
