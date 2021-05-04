@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-let backend_url = 'http://172.31.20.187:3001';
+let backend_url = 'http://54.158.33.232:3001';
 
 
 class FlashcardDataService {
