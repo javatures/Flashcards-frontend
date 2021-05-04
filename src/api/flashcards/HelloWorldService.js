@@ -1,19 +1,19 @@
 import axios from 'axios'
 
-let backend_url = 'http://localhost:3001';
+let backend_url = 'http://54.158.33.232:3001';
 
 class HelloWorldService {
     executeHelloWorldService() {
 
-        return axios.get(backend_url+'/flashcards/hello-world')
+        return axios.get(backend_url+'/hello-world')
     }
 
     executeHelloWorldBeanService() {
-        return axios.get(backend_url+'/flashcards/hello-world-bean')
+        return axios.get(backend_url+'/hello-world-bean')
     }
 
     executeHelloWorldPathVariableService(name) {
-        return axios.get(backend_url+`/flashcards/hello-world/path-variable/${name}`)
+        return axios.get(backend_url+`/hello-world/path-variable/${name}`)
     }
 }
 
