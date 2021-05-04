@@ -6,8 +6,9 @@ export default function FlashcardList({flashcards}) {
     return (
         <div className="card-grid">
             {
-               flashcards.map((flashcards) => {
-                   return <Flashcard flashcard={flashcards} />
+               flashcards.map((flashcard) => {
+                console.log(flashcard)
+                return <Flashcard flashcard={flashcard} key={flashcard.fid}/>
                })
             }
         </div>

@@ -2,6 +2,8 @@ import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import HelloWorldService from '../../api/flashcards/HelloWorldService.js'
 
+import flashimage from '../../images/flashcard.jpg'
+
 
 class WelcomeComponent extends Component {
 
@@ -30,6 +32,7 @@ class WelcomeComponent extends Component {
                 </div>
                 <div className="container">
                     {this.state.welcomeMessage}
+                    <img src={flashimage} class="img-fluid" alt="flash card" width="800" height="50%"/>
                 </div>
             </>
         )

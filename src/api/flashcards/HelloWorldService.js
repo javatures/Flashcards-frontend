@@ -1,19 +1,21 @@
 import axios from 'axios'
+import { API_URL } from '../../APIRouterConstants'
 
-let backend_url = 'http://54.158.33.232:3001';
+
+//let backend_url = 'http://54.158.33.232:3001';
 
 class HelloWorldService {
     executeHelloWorldService() {
 
-        return axios.get(backend_url+'/hello-world')
+        return axios.get(`${API_URL}/hello-world`)
     }
 
     executeHelloWorldBeanService() {
-        return axios.get(backend_url+'/hello-world-bean')
+        return axios.get(`${API_URL}/hello-world-bean`)
     }
 
     executeHelloWorldPathVariableService(name) {
-        return axios.get(backend_url+`/hello-world/path-variable/${name}`)
+        return axios.get(`${API_URL}/hello-world/path-variable/${name}`)
     }
 }
 
