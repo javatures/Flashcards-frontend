@@ -31,7 +31,7 @@ class FlashcardApp extends Component {
                     console.log(`FlashcardApp.refreshFlashcards response=${response.data}`)
                     this.setState({
                         Flashcards: response.data,
-                        selectdListOfCategories: response.data
+                        selectedListOfCategories: response.data
                     })
                 }
             )
