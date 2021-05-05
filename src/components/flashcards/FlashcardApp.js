@@ -12,7 +12,8 @@ class FlashcardApp extends Component {
             Flashcards: [],
             message: '',
             category: '',
-            selectedListOfCategories: []
+            selectedListOfCategories: [],
+            dropDownCategories: {}
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -25,22 +26,30 @@ class FlashcardApp extends Component {
 
     refreshFlashcards() {
         let username = AuthenticationService.getLoggedInUser()
+        let dropDownCategories = {}
         FlashcardDataService.retrieveAllFlashcards(username)
             .then(
                 response => {
+                    response.data.map(f =>{
+                        dropDownCategories[f.category] = f.category
+                    })
                     console.log(`FlashcardApp.refreshFlashcards response=${response.data}`)
                     this.setState({
                         Flashcards: response.data,
-                        selectedListOfCategories: response.data
+                        selectedListOfCategories: response.data,
+                        dropDownCategories: dropDownCategories
                     })
                 }
             )
+        
+        
     }
 
     handleSubmit(e) {
         console.log(e.target.value)
         const selectedValue = e.target.value;
         let userSelectedListOfCategories = []
+        let dropDownCategories = {}
 
         if (selectedValue !== 'All') {
             console.log("doesn't === All")
@@ -50,7 +59,7 @@ class FlashcardApp extends Component {
                 }
             })
             this.setState({
-                selectedListOfCategories: userSelectedListOfCategories
+                selectedListOfCategories: userSelectedListOfCategories,
             })
         } else {
             this.refreshFlashcards()
@@ -71,11 +80,12 @@ class FlashcardApp extends Component {
                             <select id="category" name="category" onChange={this.handleSubmit}>
                                 <option value="All">All</option>
                                 {
-                                    this.state.Flashcards.map(f => {
-                                        console.log("select element>>> option=" + f.category)
-                                        return <option value={f.category} key={f.category}>{f.category}</option>
+                                    Object.keys(this.state.dropDownCategories).map(f => {
+                                        console.log("select element>>> option=" + f)
+                                        return <option value={f} key={f}>{f}</option>
                                     })
                                 }
+                                {console.log(this.state.dropDownCategories)}
                             </select>
                         </div>
                         <FlashcardList flashcards={this.state.selectedListOfCategories}  />

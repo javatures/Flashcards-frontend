@@ -20,16 +20,7 @@ class WelcomeComponent extends Component {
     render() {
         return (
             <>
-                <h1>Welcome!</h1>
-                <div className="container">
-                    Welcome {this.props.match.params.name}. 
-                    You can manage your Flashcards <Link to="/flashcards">here</Link>
-                </div>
-                <div className="container">
-                    Click here to get a customized welcome message
-                    <button onClick={this.retrieveWelcomeMessage} 
-                    className="btn btn-success">Get Welcome Message</button>
-                </div>
+                <h1>Welcome to Flashcards App!</h1>
                 <div className="container">
                     {this.state.welcomeMessage}
                     <img src={flashimage} class="img-fluid" alt="flash card" width="800" height="50%"/>

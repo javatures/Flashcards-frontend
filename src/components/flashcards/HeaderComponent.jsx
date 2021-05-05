@@ -13,10 +13,10 @@ class HeaderComponent extends Component {
         return (
             <header>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <div><a href="https://github.com/javatures" className="navbar-brand">Flashcard App</a></div>
+                    <div><a href="https://github.com/javatures" className="navbar-brand">Flashcards App</a></div>
                     <ul className="navbar-nav">
-                        {isUserLogin && <li><Link className="nav-link" to="/welcome/John">Home</Link></li>}
-                        {isUserLogin && <li><Link className="nav-link" to="/flash">Flashcard Quiz</Link></li>}
+                        {isUserLogin && <li><Link className="nav-link" to="/welcome">Home</Link></li>}
+                        {isUserLogin && <li><Link className="nav-link" to="/flash">Flashcards Quiz</Link></li>}
                         {isUserLogin && <li><Link className="nav-link" to="/flashcards">Maintain Your Flashcards</Link></li>}
                         {!isUserLogin && <li><Link className="nav-link" to="/register">Register</Link></li>}
                     </ul>
