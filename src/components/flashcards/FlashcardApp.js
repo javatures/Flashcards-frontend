@@ -12,7 +12,7 @@ class FlashcardApp extends Component {
             Flashcards: [],
             message: '',
             category: '',
-            selectdListOfCategories: []
+            selectedListOfCategories: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
