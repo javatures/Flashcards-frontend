@@ -87,9 +87,11 @@ class FlashcardComponent extends Component {
         console.log("FlashcardComponent.onSubmit f.category=" + f.category)
         
         if (parseInt(f.Fid) === -1) {
+            console.log("FlashcardDataCreate")
             FlashcardDataService.createFlashcard(username, f)
                 .then(() => this.props.history.push('/flashcards'))
         } else {
+            console.log("FlashcardDataService")
             FlashcardDataService.updateFlashcard(username, this.state.Fid, f)
                 .then(() => this.props.history.push('/flashcards'))
         }
@@ -135,7 +137,7 @@ class FlashcardComponent extends Component {
                                 </fieldset>
                                 <button className="btn btn-success" type="submit">Save</button>
                                 <span style={{width:100}}> </span>
-                                <Link className="btn btn-success" to="/">Cancel</Link>
+                                <Link className="btn btn-success" to="/flashcards">Cancel</Link>
                             </Form>
                         )
                     }
