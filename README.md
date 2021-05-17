@@ -20,7 +20,7 @@ Flashcard study application for your studying needs.
 `npm start`
 
 ## Contributors
-https://github.com/bisnarevature
-https://github.com/jnguyen85
-https://github.com/Neruan-Revature
-https://github.com/nrevs
+Bisna - https://github.com/bisnarevature
+John - https://github.com/jnguyen85
+Neustein - https://github.com/Neruan-Revature
+Nick - https://github.com/nrevs
