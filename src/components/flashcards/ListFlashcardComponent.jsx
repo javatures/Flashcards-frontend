@@ -1,4 +1,4 @@
-import { Component } from "react"
+import React, { Component } from "react"
 import FlashcardDataService from '../../api/flashcards/FlashcardDataService'
 import AuthenticationService from '../../api/flashcards/AuthenticationService'
 import {Grid, Paper} from '@material-ui/core'
