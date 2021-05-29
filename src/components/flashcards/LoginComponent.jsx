@@ -84,7 +84,7 @@ class LoginComponent extends Component {
                         control={
                             <Checkbox 
                                 name="checkedB"
-                                color="primagry"
+                                color="primary"
                             />
                         }
                         label="Remember me"
