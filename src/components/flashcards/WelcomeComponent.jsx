@@ -23,7 +23,7 @@ class WelcomeComponent extends Component {
                 <h1>Welcome to Flashcards App!</h1>
                 <div className="container">
                     {this.state.welcomeMessage}
-                    <img src={flashimage} class="img-fluid" alt="flash card" width="800" height="50%"/>
+                    <img src={flashimage} className="img-fluid" alt="flash card" width="800" height="50%"/>
                 </div>
             </>
         )
