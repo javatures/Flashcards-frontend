@@ -87,8 +87,8 @@ class ListFlashcardComponent extends Component {
                                     f => 
                                     <tr key={f.fid}>
                                         <td>{f.category}</td>
-                                        <td>{f.question}</td>
-                                        <td>{f.answer}</td>
+                                        <td><p className="pre_wrap">{f.question}</p></td>
+                                        <td><p className="pre_wrap">{f.answer}</p></td>
                                         <td>
                                        
                                             <button className="btn btn-success"

@@ -10,7 +10,7 @@ export default function Flashcard({flashcard, category}) {
             <div className="front">
                 {flashcard.question}
             </div>
-            <div className="back">{flashcard.answer}</div>
+            <div className="back"><p className="pre_wrap">{flashcard.answer}</p></div>
         </div>
     )
     

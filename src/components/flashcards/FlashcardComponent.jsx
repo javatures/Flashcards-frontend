@@ -125,15 +125,12 @@ class FlashcardComponent extends Component {
                                 <fieldset className="form-group">
                                     <label>Category</label>
                                     <Field className="form-control" name="category" />
-                                </fieldset>
-                                <fieldset className="form-group">
+                                    
                                     <label>Question</label>
                                     <Field className="form-control" name="question" />
-                                </fieldset>
                                 
-                                <fieldset className="form-group">
                                     <label>Answer</label>
-                                    <Field className="form-control" name="answer" />
+                                    <Field className="form-control pre_wrap" as="textarea" rows={4} name="answer" />
                                 </fieldset>
                                 <button className="btn btn-success" type="submit">Save</button>
                                 <span style={{width:100}}> </span>
