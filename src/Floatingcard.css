@@ -11,7 +11,7 @@ body {
  .card-grid {
      display: grid;
      align-items: center;
-     grid-template-columns:  repeat(3, 200px);
+     grid-template-columns:  repeat(3, 300px);
      gap: 1rem;
  }
  
@@ -25,8 +25,8 @@ body {
      background-color: white;
      transform-style: preserve-3d;
      transition: 150ms;
-     height: 150px;
-     width: 200px;
+     height: 320px;
+     width: 300px;
      margin: 30px 30px 30px;
      cursor: pointer;
      transform: perspective(1000px) rotateY(var(--rotate-y, 0))

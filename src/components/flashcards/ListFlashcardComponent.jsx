@@ -60,7 +60,7 @@ class ListFlashcardComponent extends Component {
     }
 
     render() {
-        const paperStyle={padding: 50, height:'80vh', width:980, margin:'20px auto'}
+        const paperStyle={padding: 50, height:'100%', width:980, margin:'20px auto'}
         
         return (
         <Grid>
@@ -72,6 +72,9 @@ class ListFlashcardComponent extends Component {
             <div>
                 {this.state.message && <div className="alert alert-success">{this.state.message}</div>}
                 <div className="container">
+                    <div className="row">
+                        <button className="btn btn-success" onClick={this.addFlashcardClicked}>Add</button>  
+                    </div>
                     <table className="table">
                         <thead>
                             <tr>
@@ -110,9 +113,6 @@ class ListFlashcardComponent extends Component {
                             }
                         </tbody>
                     </table>
-                    <div className="row">
-                          <button className="btn btn-success" onClick={this.addFlashcardClicked}>Add</button>  
-                    </div>
                 </div>
             </div>
         </Paper>

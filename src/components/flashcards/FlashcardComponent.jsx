@@ -58,6 +58,9 @@ class FlashcardComponent extends Component {
         else if(values.answer.length < 5) {
                 errors.answer = 'Enter at least 5 Characters in Description'
         }
+        else if(values.answer.length > 300) {
+                errors.answer = `Enter less than 300 Characters in Answer (${values.answer.length} Characters)`
+        }
             return errors
     }
 
